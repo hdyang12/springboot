@@ -19,6 +19,18 @@
     <dependency>
        <groupId>org.springframework.boot</groupId>
        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+       <!-- 干掉 spring-boot-starter-web 默认的 tomcat -->
+       <!-- <exclusions>
+       		<exclusion>
+       			<groupId>org.springframework.boot</groupId>
+       			<artifactId>spring-boot-starter-tomcat</artifactId>
+       		</exclusion>
+       </exclusions> -->
 	</dependency>
+	<!-- 默认为tomcat容器,可替换为jetty -->
+	<!-- <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-jetty</artifactId>
+	</dependency> -->
 </dependencies>
 </project>
