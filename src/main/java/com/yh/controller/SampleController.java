@@ -11,6 +11,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yh.model.Book;
 
+/**
+ * 静态首页 http://localhost:8080/springboot/
+ * classpath:/resources/index.html
+ * 静态首页会和/index冲突
+ * @author yh
+ *
+ */
 @Controller
 //@SpringBootApplication	//组合注解;包含@EnableAutoConfiguration;@Configurable;@ComponentScan
 @ComponentScan("com.yh.model")
@@ -28,13 +35,21 @@ public class SampleController {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(SampleController.class, args);
 	}
-    @RequestMapping("/")
+	
+	//http://localhost:8080/springboot/home
+    @RequestMapping("/home")
     @ResponseBody
     String home() {
         return "Hello World!";
     }
     
-    @RequestMapping("/index")
+    //SpringBoot 默认thymeleaf 模板引擎  ThymeleafProperties
+    @RequestMapping("/hello")
+    public String hello() {
+        return "hello";
+    }
+    
+    @RequestMapping("/bookName")
     @ResponseBody
     String index() {
         return "书名为:"  + bookName;
@@ -45,4 +60,5 @@ public class SampleController {
     String book() {
         return "书名为:"  + book.getName() + ";作者为：" + book.getAuthor();
     }
+    
 }

@@ -9,12 +9,16 @@
     <version>1.5.1.RELEASE</version>
 </parent>
 <dependencies>
-    <dependency>
+    <!-- <dependency>
         <groupId>org.springframework.boot</groupId>
-        <!-- spring-boot-starter-web为我们提供了嵌入的Tomcat 和 Spring MVC 的依赖。
+        	spring-boot-starter-web为我们提供了嵌入的Tomcat 和 Spring MVC 的依赖。
         	 而Web相关的自动配置存储在 org.springframework.boot.autoconfigure.web 包下
-         -->
         <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
+    </dependency> -->
+    <!-- thymeleaf 依赖 ;spring-boot-starter-thymeleaf 会自动包含spring-boot-starter-web -->
+    <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
 </dependencies>
 </project>
