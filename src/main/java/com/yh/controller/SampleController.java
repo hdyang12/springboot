@@ -1,5 +1,6 @@
 package com.yh.controller;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -20,7 +21,8 @@ import com.yh.model.Book;
  */
 @Controller
 //@SpringBootApplication	//组合注解;包含@EnableAutoConfiguration;@Configurable;@ComponentScan
-@ComponentScan("com.yh.model")
+@ComponentScan("com.yh")
+@MapperScan("com.yh.mybatis.mapper")	//MapperScan的注解，这个是会扫描该包下的接口
 @EnableAutoConfiguration//让SpringBoot根据类路径中的jar包依赖为当前项目进行自动配置
 public class SampleController {
 	
@@ -30,7 +32,6 @@ public class SampleController {
 	
 	@Autowired
 	Book book;
-	
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(SampleController.class, args);
