@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,6 +26,8 @@ import com.yh.model.Book;
 @ComponentScan("com.yh")
 @MapperScan("com.yh.mybatis.mapper")	//MapperScan的注解，这个是会扫描该包下的接口
 @EnableAutoConfiguration//让SpringBoot根据类路径中的jar包依赖为当前项目进行自动配置
+@EnableMongoRepositories(value= {"com.yh.mongo.dao"})
+@EnableRedisRepositories(value= {"com.yh.redis.dao"})
 public class SampleController {
 	
 	//application.properties的属性直接使用@Value注入
@@ -41,6 +45,7 @@ public class SampleController {
     @RequestMapping("/home")
     @ResponseBody
     String home() {
+//    	System.out.println(hqinfoRepository.findByStkcode("000591.SZ"));
         return "Hello World!";
     }
     
