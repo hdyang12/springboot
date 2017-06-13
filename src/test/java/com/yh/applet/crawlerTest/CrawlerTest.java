@@ -1,4 +1,4 @@
-package com.yh.crawlerTest;
+package com.yh.applet.crawlerTest;
 
 import org.junit.Test;
 
