@@ -14,7 +14,7 @@ public class CrawlerTest {
 	@Test
 	public void baiduResultTest(){
 		String url = "http://www.baidu.com";
-		System.out.println(CrawlerUtils.getUrlContent(url, false));
+		System.out.println(CrawlerUtils.getUrlContent(url, false));//false不走代理
 	}
 	
 	@Test
