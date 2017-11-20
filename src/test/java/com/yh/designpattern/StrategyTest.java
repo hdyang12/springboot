@@ -18,7 +18,7 @@ import com.yh.designpattern.simplefactory.service.OperationService;
 @RunWith(SpringJUnit4ClassRunner.class)	//在JUnit环境下提供Spring TestContext Framework的功能
 //用来加载配置application,其中classes 属性用来加载配置类
 @SpringBootTest(classes = {SampleController.class})
-public class SimpleFactoryTest {
+public class StrategyTest {
 	
 	@Autowired
 	private OperationService operationService;
