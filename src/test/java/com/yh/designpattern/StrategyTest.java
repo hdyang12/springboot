@@ -11,7 +11,7 @@ import com.yh.designpattern.simplefactory.service.OperationService;
 
 /**
  * springboot单元测试
- * 简单工厂测试类
+ * 简单工厂结合策略模式测试类
  * @author yh
  *
  */
